@@ -6,8 +6,10 @@ public class Main {
         history.push("a");
         history.push("b");
         history.push("c");
-        for (int i = 0; i < history.getUrls().size(); i++) {
-            System.out.println(history.getUrls().get(i));
+        Iterator iterator = history.createIterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.current());
+            iterator.next();
         }
     }
 }
