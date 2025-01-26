@@ -1,31 +1,22 @@
 package Behavioral.State.Canvas;
 
 public class canvas {
-    private ToolType currentTool;
+    private Tool currentTool;
 
     public void mouseDown() {
-        if (currentTool == ToolType.SELECTION)
-            System.out.println("SelectionIcon");
-        else if (currentTool == ToolType.BRUSH)
-            System.out.println("BrushIcon");
-        else if (currentTool == ToolType.ERASER)
-            System.out.println("EraserIcon");
+        currentTool.mouseDown();
     }
 
     public void mouseUp() {
-        if (currentTool == ToolType.SELECTION)
-            System.out.println("Draw dashed rectangle");
-        else if (currentTool == ToolType.BRUSH)
-            System.out.println("Draw a line");
-        else if (currentTool == ToolType.ERASER)
-            System.out.println("Erase something");
+        currentTool.mouseUp();
     }
 
-    public ToolType getCurrentTool() {
+    public Tool getCurrentTool() {
         return currentTool;
     }
 
-    public void setCurrentTool(ToolType currentTool) {
+    public void setCurrentTool(Tool currentTool) {
         this.currentTool = currentTool;
     }
+
 }
