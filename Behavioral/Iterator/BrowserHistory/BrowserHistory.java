@@ -1,28 +1,27 @@
 package Behavioral.Iterator.BrowserHistory;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class BrowserHistory {
-    private List<String> urls = new ArrayList<>();
+    private String[] urls = new String[10];
+    private int count;
 
     public void push(String url) {
-        urls.add(url);
+        urls[count++] = url;
     }
 
     public String pop() {
-        var lastIndex = urls.size() - 1;
-        var lastUrl = urls.get(lastIndex);
-        urls.remove(lastUrl);
-        return lastUrl;
+        return urls[--count];
     }
 
-    public List<String> getUrls() {
+    public String[] getUrls() {
         return urls;
     }
 
+    public int getCount() {
+        return count;
+    }
+
     public Iterator createIterator() {
-        return new ListIterator(this);
+        return new ArrayIterator(this);
     }
 
 }
