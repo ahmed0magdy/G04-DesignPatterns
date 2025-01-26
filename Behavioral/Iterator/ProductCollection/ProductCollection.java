@@ -10,4 +10,11 @@ public class ProductCollection {
     products.add(product);
   }
 
+  public Iterator createIterator() {
+    return new ListIterator(this);
+  }
+
+  public List<Product> getProducts() {
+    return products;
+  }
 }
