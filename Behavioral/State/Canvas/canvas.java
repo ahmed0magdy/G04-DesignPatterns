@@ -3,6 +3,10 @@ package Behavioral.State.Canvas;
 public class canvas {
     private Tool currentTool;
 
+    public canvas(Tool currenTool) {
+        this.currentTool = currenTool;
+    }
+
     public void mouseDown() {
         currentTool.mouseDown();
     }
