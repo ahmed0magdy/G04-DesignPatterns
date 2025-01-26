@@ -1,8 +1,7 @@
 package Behavioral.State.Map;
 
-public enum TravelMode {
-    DRIVING,
-    BICYCLING,
-    TRANSIT,
-    WALKING
+public interface TravelMode {
+    Object getEta();
+
+    Object getDirection();
 }
