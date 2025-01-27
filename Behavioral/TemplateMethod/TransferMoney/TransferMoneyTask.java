@@ -1,14 +1,14 @@
 package Behavioral.TemplateMethod.TransferMoney;
 
-public class TransferMoneyTask {
-    private AuditTrail auditTrail;
+public class TransferMoneyTask extends Task {
 
     public TransferMoneyTask(AuditTrail auditTrail) {
-        this.auditTrail = auditTrail;
+        super(auditTrail);
     }
 
-    public void execute() {
-        auditTrail.record();
+    @Override
+    public void doExecute() {
         System.out.println("Transfer Money");
     }
+
 }

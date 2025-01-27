@@ -1,14 +1,13 @@
 package Behavioral.TemplateMethod.TransferMoney;
 
-public class GenerateReportTask {
-    private AuditTrail auditTrail;
+public class GenerateReportTask extends Task {
 
     public GenerateReportTask(AuditTrail auditTrail) {
-        this.auditTrail = auditTrail;
+        super(auditTrail);
     }
 
-    public void execute() {
-        auditTrail.record();
+    @Override
+    public void doExecute() {
         System.out.println("Generate Report");
     }
 
