@@ -1,6 +1,6 @@
 package Behavioral.Observer.Stocks;
 
-public class Stock {
+public class Stock extends Subject {
     private String symbol;
     private float price;
 
@@ -15,6 +15,7 @@ public class Stock {
 
     public void setPrice(float price) {
         this.price = price;
+        notifyObservers();
     }
 
     @Override
