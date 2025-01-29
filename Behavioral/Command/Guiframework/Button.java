@@ -1,3 +1,5 @@
+package Behavioral.Command.Guiframework;
+
 public class Button {
     private String label;
     private Command command;
