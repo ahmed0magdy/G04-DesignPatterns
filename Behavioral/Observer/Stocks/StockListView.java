@@ -7,15 +7,14 @@ public class StockListView implements Observer {
     private List<Stock> stocks = new ArrayList<>();
     private Stock stock;
 
-    public StockListView(Stock stock) {
-        this.stock = stock;
-    }
-
     public void addStock(Stock stock) {
+        this.stock = stock;
         stocks.add(stock);
+        stock.addObserver(this);
     }
 
     public void show() {
+        System.out.println("Stock List View");
         for (var stock : stocks)
             System.out.println(stock);
     }
@@ -23,5 +22,6 @@ public class StockListView implements Observer {
     @Override
     public void update() {
         System.out.println("Stock List View got updated: " + stock.getPrice());
+        show();
     }
 }
