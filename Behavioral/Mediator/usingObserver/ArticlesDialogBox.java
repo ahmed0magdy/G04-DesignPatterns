@@ -1,6 +1,6 @@
 package Behavioral.Mediator.usingObserver;
 
-public class ArticlesDialogBox {
+public class ArticlesDialogBox { // acts as both an observer and a mediator
     private ListBox articlesListBox = new ListBox();
     private TextBox titleTextBox = new TextBox();
     private Button saveButton = new Button();
