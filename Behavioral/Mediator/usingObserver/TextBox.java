@@ -9,7 +9,7 @@ public class TextBox extends UIControl {
 
     public void setContent(String content) {
         this.content = content;
-        notifyObservers();
+        notifyEventHandlers();
     }
 
 }

@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class UIControl {
-    private List<Observer> observers = new ArrayList<>();
+    private List<EventHandler> eventHandlers = new ArrayList<>();
 
-    protected void attach(Observer observer) {
-        observers.add(observer);
+    protected void addEventHandler(EventHandler observer) {
+        eventHandlers.add(observer);
     }
 
-    protected void remove(Observer observer) {
-        observers.remove(observer);
+    protected void remove(EventHandler observer) {
+        eventHandlers.remove(observer);
     }
 
-    protected void notifyObservers() {
-        for (var observer : observers)
-            observer.update();
+    protected void notifyEventHandlers() {
+        for (var eventHandler : eventHandlers)
+            eventHandler.handle();
     }
 
 }

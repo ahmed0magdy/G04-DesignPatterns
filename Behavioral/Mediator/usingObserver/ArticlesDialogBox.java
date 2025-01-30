@@ -15,8 +15,8 @@ public class ArticlesDialogBox {
 
         // });
         // articlesListBox.attach(() -> articleSelected());
-        articlesListBox.attach(this::articleSelected);
-        titleTextBox.attach(this::titleChanged);
+        articlesListBox.addEventHandler(this::articleSelected);
+        titleTextBox.addEventHandler(this::titleChanged);
     }
 
     public void stimulateUserInteraction() {

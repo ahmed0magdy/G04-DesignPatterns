@@ -9,6 +9,6 @@ public class Button extends UIControl {
 
     public void setEnabled(boolean isEnabled) {
         this.isEnabled = isEnabled;
-        notifyObservers();
+        notifyEventHandlers();
     }
 }

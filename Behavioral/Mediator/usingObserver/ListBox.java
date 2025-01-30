@@ -9,6 +9,6 @@ public class ListBox extends UIControl {
 
     public void setSelection(String selection) {
         this.selection = selection;
-        notifyObservers();
+        notifyEventHandlers();
     }
 }
