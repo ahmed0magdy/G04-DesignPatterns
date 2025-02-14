@@ -1,14 +1,25 @@
 package Behavioral.ChainOfResponsibility.accounting;
 
-public class DataReader {
-    public void read(String fileName) {
-        if (fileName.endsWith(".xls")) {
-            System.out.println("Reading data from an Excel spreadsheet.");
-        } else if (fileName.endsWith(".numbers")) {
-            System.out.println("Reading data from a Numbers spreadsheet.");
-        } else if (fileName.endsWith(".qbw")) {
-            System.out.println("Reading data from a QuickBooks file.");
-        } else
-            throw new UnsupportedOperationException("File format not supported.");
+public abstract class DataReader {
+    private DataReader next;
+
+    public DataReader(DataReader next) {
+        this.next = next;
     }
+
+    public void read(String filename) {
+        if (filename.endsWith(hasExtension())) {
+            this.doRead(filename);
+            return;
+        }
+
+        if (next != null)
+            next.read(filename);
+
+    }
+
+    protected abstract String hasExtension();
+
+    protected abstract void doRead(String filename);
+
 }
