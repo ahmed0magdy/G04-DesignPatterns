@@ -1,11 +1,13 @@
 package Behavioral.ChainOfResponsibility.webServer;
 
 public class WebServer {
+    private Handler handler;
+
+    public WebServer(Handler handler) {
+        this.handler = handler;
+    }
+
     public void handle(HttpRequest request) {
-        // Authentication
-        var authenticator = new Authenticator();
-        authenticator.authenticate(request); // tightly coupled so can create an interface but can't change
-        // logging
-        // compression
+        handler.handle(request);
     }
 }
