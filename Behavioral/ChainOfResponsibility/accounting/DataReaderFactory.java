@@ -2,10 +2,13 @@ package Behavioral.ChainOfResponsibility.accounting;
 
 public class DataReaderFactory {
     public static DataReader getDataReaderChain() {
-        var excel = new ExcelReader(null);
-        var numbers = new NumbersReader(excel);
-        var qbw = new QuickBookReader(numbers);
+        var excelReader = new ExcelReader();
+        var numbersReader = new NumbersReader();
+        var quickBooksReader = new QuickBookReader();
 
-        return qbw;
+        quickBooksReader.setNext(numbersReader);
+        numbersReader.setNext(excelReader);
+
+        return quickBooksReader;
     }
 }

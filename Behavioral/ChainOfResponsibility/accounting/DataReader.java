@@ -3,7 +3,7 @@ package Behavioral.ChainOfResponsibility.accounting;
 public abstract class DataReader {
     private DataReader next;
 
-    public DataReader(DataReader next) {
+    public void setNext(DataReader next) {
         this.next = next;
     }
 
@@ -15,6 +15,8 @@ public abstract class DataReader {
 
         if (next != null)
             next.read(filename);
+        else
+            throw new UnsupportedOperationException("File format not supported.");
 
     }
 
