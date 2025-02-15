@@ -3,8 +3,8 @@ package Behavioral.Visitor.HtmlEditor;
 public class AnchorNode implements HtmlNode {
 
     @Override
-    public void highlight() {
-        System.out.println("hi ghlight-anchor");
+    public void execute(Operation operation) {
+        operation.apply(this);
     }
 
 }

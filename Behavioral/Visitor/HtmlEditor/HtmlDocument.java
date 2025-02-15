@@ -10,11 +10,8 @@ public class HtmlDocument {
         nodes.add(node);
     }
 
-    public void hightlight() {
+    public void execute(Operation operation) {
         for (var node : nodes)
-            node.highlight(); // polymorphism
+            node.execute(operation);
     }
-    // to extract plain text implement here and interface with all concrete
-    // implementation and
-
 }
