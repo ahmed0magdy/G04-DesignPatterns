@@ -15,5 +15,6 @@ var grp = new Group();
 grp.add(grp1);
 grp.add(grp2);
 grp.render();
+grp.move(1, 2);
     }
 } 

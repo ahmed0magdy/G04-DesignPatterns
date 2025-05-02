@@ -3,20 +3,24 @@ package Structural.Composite.groupShapes;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Group {
-    private List<Object> objects = new ArrayList<>();
+public class Group implements Component{
+    private List<Component> components = new ArrayList<>();
 
-    public void add(Object shape){
-        objects.add(shape);
+    public void add(Component shape){
+        components.add(shape);
     }
-    
+
+    @Override
     public void render(){
-        for(var object:objects){
-        if(object instanceof Shape)
-        ((Shape)object).render();
-        else
-        ((Group)object).render();
+        for(var component:components){
+            component.render();
         }
      
     }
+
+    @Override
+    public void move(int x, int y) {
+ for(var component:components)
+ component.move(x, y);
+}
 }
