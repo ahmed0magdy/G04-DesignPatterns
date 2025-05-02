@@ -56,7 +56,6 @@ This course covers design patterns in three main categories:
 ### Required Reading
 
 - "Design Patterns: Elements of Reusable Object-Oriented Software" by Gamma, Helm, Johnson, and Vlissides
-- Course-specific materials provided in the learning management system
 
 ### Recommended Reading
 
