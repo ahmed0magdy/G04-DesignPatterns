@@ -1,10 +1,16 @@
 package Structural.Decorator.CloudService;
 
-public class CompressedCloudStream extends CloudStream{
-    @Override
+public class CompressedCloudStream implements Stream{
+    private Stream stream;
+    
+    public CompressedCloudStream(Stream stream) {
+        this.stream = stream;
+    }
+
+
     public void write(String data) {
         var compressed = compress(data);
-        super.write(compressed);
+        stream.write(compressed);
     }
 
     private String compress(String data){

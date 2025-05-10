@@ -1,11 +1,15 @@
 package Structural.Decorator.CloudService;
 
-public class EncryptedCloudStream extends CloudStream {
+public class EncryptedCloudStream implements Stream {
 
-    @Override
+    private Stream stream;
+
+    public EncryptedCloudStream(Stream stream) {
+        this.stream = stream;
+    }
     public void write(String data) {
         var encrypted = encrypt(data);
-        super.write(encrypted);
+        stream.write(encrypted);
     }
     private String encrypt(String data){
         return "'#%$@#%#$^#@^#$@'";
