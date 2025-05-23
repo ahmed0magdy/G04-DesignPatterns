@@ -3,7 +3,7 @@ package Structural.Decorator.CodeEditor;
 public class ErrorDecorator implements Marker {
     private Marker marker;
 
-    public ErrorDecorator(Marker marker) {
+    protected ErrorDecorator(Marker marker) {
             this.marker = marker;
         }  
         

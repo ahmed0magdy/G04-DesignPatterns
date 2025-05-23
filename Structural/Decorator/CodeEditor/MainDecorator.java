@@ -2,7 +2,7 @@ package Structural.Decorator.CodeEditor;
 
 public class MainDecorator implements Marker {
     private Marker marker;
-    public MainDecorator(Marker marker) {
+    protected MainDecorator(Marker marker) {
         this.marker = marker;
     }
 
