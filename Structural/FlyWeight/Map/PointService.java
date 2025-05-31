@@ -12,8 +12,21 @@ public class PointService {
 
     public List<Point> getPoints() {
         List<Point> points = new ArrayList<>();
-        var point = new Point(1, 2, iconFactory.gePointIcon(PointType.CAFE));
-        points.add(point);
+
+        // Get the flyweight object from the factory
+        var cafeIcon = iconFactory.getPointIcon(PointType.CAFE);
+
+        // Create points with the same icon object
+        points.add(new Point(1, 2, cafeIcon));
+        points.add(new Point(3, 4, cafeIcon));
+
+        // Get another flyweight object
+        var hospitalIcon = iconFactory.getPointIcon(PointType.HOSPITAL);
+        points.add(new Point(5, 6, hospitalIcon));
+
+        // Reuse the cafe icon for another point
+        points.add(new Point(7, 8, cafeIcon));
+
         return points;
     }
 }
