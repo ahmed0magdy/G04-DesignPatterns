@@ -10,9 +10,12 @@ public class SpreadSheet {
   private final int fontSize = 12;
   private final boolean isBold = false;
 
+  private CellContextFactory contextFactory;
+
   private Cell[][] cells = new Cell[MAX_ROWS][MAX_COLS];
 
-  public SpreadSheet() {
+  public SpreadSheet(CellContextFactory contextFactory) {
+    this.contextFactory = contextFactory;
     generateCells();
   }
 
@@ -26,7 +29,9 @@ public class SpreadSheet {
     ensureCellExists(row, col);
 
     var cell = cells[row][col];
-    cells[row][col].setFontFamily(fontFamily);
+    var currentContext = cell.getContext();
+    var context = contextFactory.getCellContext(fontFamily, currentContext.getFontSize(), currentContext.isBold());
+    cell.setContext(context);
   }
 
   private void ensureCellExists(int row, int col) {
@@ -39,11 +44,12 @@ public class SpreadSheet {
 
   private void generateCells() {
     for (var row = 0; row < MAX_ROWS; row++)
-      for (var col = 0; col < MAX_COLS; col++) {
-        var cell = new Cell(row, col);
-        cell.setFontFamily(fontFamily);
-        cells[row][col] = cell;
-      }
+      for (var col = 0; col < MAX_COLS; col++)
+        cells[row][col] = new Cell(row, col, getDefaultContext());
+  }
+
+  private CellContext getDefaultContext() {
+    return new CellContext(fontFamily, fontSize, isBold);
   }
 
   public void render() {
