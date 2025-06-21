@@ -29,6 +29,8 @@ public class Cell {
   }
 
   public void render() {
-    System.out.printf("(%d, %d): %s [%s]\n", row, column, content, context.getFontFamily());
+    System.out.printf("(%d, %d): %s [%s] [%s] [%s]\n", row, column, content, context.getFontFamily(),
+        context.getFontSize(),
+        context.isBold());
   }
 }
