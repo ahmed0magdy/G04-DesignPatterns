@@ -1,22 +1,9 @@
 package Structural.Proxy.Ebook;
 
-public class Ebook {
-    private String fileName;
+public interface Ebook {
 
-    public Ebook(String fileName) {
-        this.fileName = fileName;
-        load();
-    }
+    void show();
 
-    private void load() {
-        System.out.println(fileName + " Ebook loaded");
-    }
+    String getFileName();
 
-    public void show() {
-        System.out.println("showing ebook " + fileName);
-    }
-
-    public String getFileName() {
-        return fileName;
-    }
 }
