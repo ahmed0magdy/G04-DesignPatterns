@@ -1,5 +1,11 @@
 package Structural.Bridge;
 
-public abstract class AdvancedRemoteControl extends RemoteControl {
-    public abstract void setChannel();
+public class AdvancedRemoteControl extends RemoteControl {
+    public AdvancedRemoteControl(Device device) {
+        super(device);
+    }
+
+    public void setChannel(int channel) {
+        device.setChannel(channel);
+    };
 }

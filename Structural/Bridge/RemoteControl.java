@@ -1,15 +1,17 @@
 package Structural.Bridge;
 
-// Basic Remote Control (turnOn, turnOff)
-// Samsung Remote Control
-// LG Remote Control
-// Advanced Remote Control (setChannel)
-// Samsung Advanced Remote Control
-// LG Advanced Remote Control
-// Movie Remote Control (play, pause, rewind)
+public class RemoteControl {
+    protected Device device;
 
-public abstract class RemoteControl {
-    public abstract void turnOn();
+    public RemoteControl(Device device) {
+        this.device = device;
+    }
 
-    public abstract void turnoff();
+    public void turnOn() {
+        device.turnOn();
+    };
+
+    public void turnoff() {
+        device.turnOff();
+    };
 }
