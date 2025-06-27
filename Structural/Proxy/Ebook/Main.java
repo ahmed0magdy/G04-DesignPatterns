@@ -5,7 +5,7 @@ public class Main {
         var Library = new Library();
         String[] ebooksNames = { "a", "b", "c" };
         for (var fileName : ebooksNames)
-            Library.add(new EbookProxy(fileName));
+            Library.add(new LoggingProxy(fileName));
 
         // user opens an ebook
         Library.openEbook("a");
