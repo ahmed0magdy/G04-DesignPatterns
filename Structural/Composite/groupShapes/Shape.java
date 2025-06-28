@@ -1,8 +1,8 @@
 package Structural.Composite.groupShapes;
 
-public class Shape implements Component{
+public class Shape implements Component {
     @Override
-    public void render(){
+    public void render() {
         System.out.println("Render Shape");
     }
 
