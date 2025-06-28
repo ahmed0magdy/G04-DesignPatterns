@@ -2,10 +2,10 @@ package Creational.Singleton.ConfigManager;
 
 public class Main {
     public static void main(String[] args) {
-        var settings = new ConfigManager();
+        var settings = ConfigManager.getInstance();
         settings.set("name", "mego");
 
-        var other = new ConfigManager();
+        var other = ConfigManager.getInstance();
         System.out.println(other.get("name"));
     }
 }
