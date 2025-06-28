@@ -10,4 +10,11 @@ public class Text implements Component {
     public String getContent() {
         return content;
     }
+
+    @Override
+    public Component clone() {
+        Text copiedText = new Text(content);
+        System.out.println("copying " + content);
+        return copiedText;
+    }
 }
