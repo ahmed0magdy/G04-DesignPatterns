@@ -1,8 +1,8 @@
 package Creational.AbstractFactory.Themes.ant;
 
-import Creational.AbstractFactory.Themes.TextBox;
+import Creational.AbstractFactory.Themes.Button;
 
-public class AntButton implements TextBox {
+public class AntButton implements Button {
 
     @Override
     public void render() {
