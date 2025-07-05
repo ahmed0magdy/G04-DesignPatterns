@@ -3,6 +3,7 @@ package Creational.AbstractFactory.Workout;
 public class Demo {
     public static void show() {
         var homePage = new HomePage();
-        homePage.setGoal(Goal.WEIGHT_LOSS);
+        homePage.setGoal(new BuildMuscleFactory());
+        homePage.setGoal(new WeightLossFactory());
     }
 }
